@@ -122,6 +122,12 @@ while not done:
             done = True
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             done = True
+        if event.type == pygame.MOUSEBUTTONUP:
+            (x,y) = pygame.mouse.get_pos()
+            if x<WIDTH/2:
+                slidechange(-1)
+            else:
+                slidechange(+1)
 
     clock.tick(5)
 
